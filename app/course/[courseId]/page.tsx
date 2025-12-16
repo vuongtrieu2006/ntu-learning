@@ -10,7 +10,7 @@ import { CourseEnroll } from "@/components/course-enroll"
 export default function CoursePage({
   params,
 }: {
-  params: Promise<{ courseId: string }>
+  params: { courseId: string }
 }) {
   const { courseId } = params
 
