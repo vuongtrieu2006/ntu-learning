@@ -12,7 +12,7 @@ import { ArrowLeft } from "lucide-react"
 export default function LessonPage({
   params,
 }: {
-  params: Promise<{ courseId: string }>
+  params: { courseId: string }>
 }) {
   const searchParams = useSearchParams()
   const lessonId = searchParams.get("lesson")
