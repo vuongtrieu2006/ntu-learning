@@ -19,7 +19,10 @@ export default function CoursePage({
     notFound()
   }
 
-  const totalMinutes = course.lessons.reduce((acc, lesson) => acc + lesson.duration, 0)
+  const totalMinutes = course.lessons.reduce(
+    (acc, lesson) => acc + lesson.duration,
+    0
+  )
 
   return (
     <main className="min-h-screen bg-background">
@@ -34,7 +37,9 @@ export default function CoursePage({
           <div className="space-y-4">
             <div>
               <h1 className="text-4xl font-bold text-balance">{course.name}</h1>
-              <p className="text-muted-foreground mt-2">Giảng viên: {course.instructor}</p>
+              <p className="text-muted-foreground mt-2">
+                Giảng viên: {course.instructor}
+              </p>
             </div>
             <p className="text-lg text-foreground/80">{course.description}</p>
             <div className="flex gap-4 text-sm flex-wrap">
@@ -63,14 +68,32 @@ export default function CoursePage({
                 <TabsTrigger value="overview">Tổng Quan</TabsTrigger>
                 <TabsTrigger value="curriculum">Chương Trình Học</TabsTrigger>
               </TabsList>
+
               <TabsContent value="overview" className="space-y-4 mt-6">
                 <div className="bg-card border rounded-lg p-6 space-y-4">
+                  <div className="w-full aspect-video rounded-lg overflow-hidden mb-6">
+                    <iframe
+                      src={course.youtubePlaylistUrl?.replace(
+                        "playlist?list=",
+                        "embed/videoseries?list="
+                      )}
+                      className="w-full h-full"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                    />
+                  </div>
+
                   <div>
-                    <h3 className="text-lg font-semibold mb-3">Khóa Học Này Bao Gồm</h3>
+                    <h3 className="text-lg font-semibold mb-3">
+                      Khóa Học Này Bao Gồm
+                    </h3>
                     <ul className="space-y-3 text-sm">
                       <li className="flex items-start gap-3">
                         <span className="text-primary font-bold">✓</span>
-                        <span>{course.lessons.length} bài học video được cấu trúc tốt</span>
+                        <span>
+                          {course.lessons.length} bài học video được cấu trúc
+                          tốt
+                        </span>
                       </li>
                       <li className="flex items-start gap-3">
                         <span className="text-primary font-bold">✓</span>
@@ -78,7 +101,10 @@ export default function CoursePage({
                       </li>
                       <li className="flex items-start gap-3">
                         <span className="text-primary font-bold">✓</span>
-                        <span>Tổng cộng {totalMinutes} phút nội dung video chất lượng cao</span>
+                        <span>
+                          Tổng cộng {totalMinutes} phút nội dung video chất
+                          lượng cao
+                        </span>
                       </li>
                       <li className="flex items-start gap-3">
                         <span className="text-primary font-bold">✓</span>
@@ -101,6 +127,7 @@ export default function CoursePage({
                   </div>
                 </div>
               </TabsContent>
+
               <TabsContent value="curriculum" className="space-y-4 mt-6">
                 <div className="space-y-3">
                   {course.lessons.map((lesson, index) => (
@@ -111,9 +138,14 @@ export default function CoursePage({
                       <div className="flex items-start justify-between gap-4">
                         <div className="flex-1">
                           <h4 className="font-semibold text-base">
-                            <span className="text-primary">Bài {index + 1}:</span> {lesson.title}
+                            <span className="text-primary">
+                              Bài {index + 1}:
+                            </span>{" "}
+                            {lesson.title}
                           </h4>
-                          <p className="text-sm text-muted-foreground mt-1">{lesson.description}</p>
+                          <p className="text-sm text-muted-foreground mt-1">
+                            {lesson.description}
+                          </p>
                         </div>
                         <Badge variant="outline" className="whitespace-nowrap">
                           {lesson.duration} phút
@@ -130,30 +162,16 @@ export default function CoursePage({
             <div className="bg-card border rounded-lg p-6 sticky top-4 space-y-4">
               <div>
                 <div className="text-4xl font-bold text-green-600">Miễn Phí</div>
-                <p className="text-sm text-muted-foreground mt-1">Không có chi phí - Ai cũng có thể học</p>
-              </div>
-
-              <div className="bg-accent/20 rounded-lg p-3 text-sm">
-                <p className="font-semibold mb-2">Gói Này Bao Gồm:</p>
-                <ul className="space-y-1 text-xs text-foreground/80">
-                  <li className="flex items-center gap-2">
-                    <CheckCircle2 className="w-3 h-3 text-primary" />
-                    <span>Truy cập trọn đời</span>
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <CheckCircle2 className="w-3 h-3 text-primary" />
-                    <span>Cập nhật nội dung miễn phí</span>
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <CheckCircle2 className="w-3 h-3 text-primary" />
-                    <span>Bảng điều khiển tiến độ</span>
-                  </li>
-                </ul>
+                <p className="text-sm text-muted-foreground mt-1">
+                  Không có chi phí - Ai cũng có thể học
+                </p>
               </div>
 
               <CourseEnroll courseId={course.id} />
 
-              <p className="text-xs text-center text-muted-foreground">Hoàn toàn miễn phí - Không cần thanh toán</p>
+              <p className="text-xs text-center text-muted-foreground">
+                Hoàn toàn miễn phí - Không cần thanh toán
+              </p>
             </div>
           </div>
         </div>
