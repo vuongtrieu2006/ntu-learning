@@ -24,8 +24,8 @@ export const COURSES: Course[] = [
     description: "Khóa học lập trình hướng đối tượng - những khái niệm cơ bản đến nâng cao",
     instructor: "Phạm Thị Kim Ngoan",
     image: "/oop-course.jpg",
-    priceInCents: 0, // Made free
-    youtubePlaylistUrl: "https://www.youtube.com/playlist?list=PLPt6-BtUI22owYNbmZMv76VIfyqBDv0-D",
+    priceInCents: 0,
+    youtubePlaylistUrl: "https://www.youtube.com/embed/videoseries?list=PLPt6-BtUI22owYNbmZMv76VIfyqBDv0-D",
     lessons: [
       {
         id: "oop-1",
@@ -57,14 +57,15 @@ export const COURSES: Course[] = [
       },
     ],
   },
+
   {
     id: "discrete-math",
     name: "Toán Rời Rạc",
     description: "Khóa học Toán Rời Rạc - nền tảng cho Khoa học Máy Tính",
     instructor: "Nguyễn Hải Triều",
     image: "/discrete-math-course.jpg",
-    priceInCents: 0, // Made free
-    youtubePlaylistUrl: "https://www.youtube.com/playlist?list=PLyxSzL3F7486CtfXZXj3YSgmnWHvNUol8",
+    priceInCents: 0,
+    youtubePlaylistUrl: "https://www.youtube.com/embed/videoseries?list=PLyxSzL3F7486CtfXZXj3YSgmnWHvNUol8",
     lessons: [
       {
         id: "math-1",
@@ -96,14 +97,15 @@ export const COURSES: Course[] = [
       },
     ],
   },
+
   {
     id: "data-structures",
     name: "Cấu Trúc Dữ Liệu và Giải Thuật",
     description: "Khóa học về các cấu trúc dữ liệu cơ bản và các thuật toán quan trọng",
     instructor: "Trần Minh Văn",
     image: "/data-structures-course.jpg",
-    priceInCents: 0, // Made free
-    youtubePlaylistUrl: "https://www.youtube.com/playlist?list=PLyxSzL3F74875OpDlkUfsRRUktZMGkhJU",
+    priceInCents: 0,
+    youtubePlaylistUrl: "https://www.youtube.com/embed/videoseries?list=PLyxSzL3F74875OpDlkUfsRRUktZMGkhJU",
     lessons: [
       {
         id: "ds-1",
@@ -135,14 +137,15 @@ export const COURSES: Course[] = [
       },
     ],
   },
+
   {
     id: "computer-networks",
     name: "Mạng Máy Tính",
     description: "Khóa học Mạng Máy Tính - từ các lớp cơ bản đến ứng dụng mạng",
     instructor: "Phạm Văn Nam",
     image: "/networking-course.jpg",
-    priceInCents: 0, // Made free
-    youtubePlaylistUrl: "https://www.youtube.com/playlist?list=PLFTMmgcKgJ40Q9jFF2yQunDj24KUcBbBI",
+    priceInCents: 0,
+    youtubePlaylistUrl: "https://www.youtube.com/embed/videoseries?list=PLFTMmgcKgJ40Q9jFF2yQunDj24KUcBbBI",
     lessons: [
       {
         id: "net-1",
@@ -174,14 +177,15 @@ export const COURSES: Course[] = [
       },
     ],
   },
+
   {
     id: "database",
     name: "Cơ Sở Dữ Liệu",
     description: "Khóa học Cơ Sở Dữ Liệu - thiết kế, SQL và các hệ quản trị CSDL",
     instructor: "Phạm Thị Thu Thuý",
     image: "/database-course.jpg",
-    priceInCents: 0, // Made free
-    youtubePlaylistUrl: "https://www.youtube.com/playlist?list=PLyxSzL3F7484deka_j1czssCiHygV6oF-",
+    priceInCents: 0,
+    youtubePlaylistUrl: "https://www.youtube.com/embed/videoseries?list=PLyxSzL3F7484deka_j1czssCiHygV6oF-",
     lessons: [
       {
         id: "db-1",

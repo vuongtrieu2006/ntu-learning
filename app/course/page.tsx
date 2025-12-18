@@ -7,11 +7,7 @@ import Link from "next/link"
 import { Clock, Users, ArrowLeft, CheckCircle2 } from "lucide-react"
 import { CourseEnroll } from "@/components/course-enroll"
 
-export default function CoursePage({
-  params,
-}: {
-  params: { courseId: string }
-}) {
+export default function CoursePage({ params }: { params: { courseId: string } }) {
   const { courseId } = params
 
   const course = COURSES.find((c) => c.id === courseId)
@@ -34,6 +30,7 @@ export default function CoursePage({
               Quay Lại
             </Button>
           </Link>
+
           <div className="space-y-4">
             <div>
               <h1 className="text-4xl font-bold text-balance">{course.name}</h1>
@@ -41,7 +38,9 @@ export default function CoursePage({
                 Giảng viên: {course.instructor}
               </p>
             </div>
+
             <p className="text-lg text-foreground/80">{course.description}</p>
+
             <div className="flex gap-4 text-sm flex-wrap">
               <div className="flex items-center gap-2">
                 <Clock className="w-4 h-4" />
@@ -71,12 +70,10 @@ export default function CoursePage({
 
               <TabsContent value="overview" className="space-y-4 mt-6">
                 <div className="bg-card border rounded-lg p-6 space-y-4">
+
                   <div className="w-full aspect-video rounded-lg overflow-hidden mb-6">
                     <iframe
-                      src={course.youtubePlaylistUrl?.replace(
-                        "playlist?list=",
-                        "embed/videoseries?list="
-                      )}
+                      src={course.youtubePlaylistUrl}
                       className="w-full h-full"
                       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                       allowFullScreen
@@ -90,10 +87,7 @@ export default function CoursePage({
                     <ul className="space-y-3 text-sm">
                       <li className="flex items-start gap-3">
                         <span className="text-primary font-bold">✓</span>
-                        <span>
-                          {course.lessons.length} bài học video được cấu trúc
-                          tốt
-                        </span>
+                        <span>{course.lessons.length} bài học video được cấu trúc tốt</span>
                       </li>
                       <li className="flex items-start gap-3">
                         <span className="text-primary font-bold">✓</span>
@@ -101,10 +95,7 @@ export default function CoursePage({
                       </li>
                       <li className="flex items-start gap-3">
                         <span className="text-primary font-bold">✓</span>
-                        <span>
-                          Tổng cộng {totalMinutes} phút nội dung video chất
-                          lượng cao
-                        </span>
+                        <span>Tổng cộng {totalMinutes} phút nội dung video chất lượng cao</span>
                       </li>
                       <li className="flex items-start gap-3">
                         <span className="text-primary font-bold">✓</span>
@@ -138,9 +129,7 @@ export default function CoursePage({
                       <div className="flex items-start justify-between gap-4">
                         <div className="flex-1">
                           <h4 className="font-semibold text-base">
-                            <span className="text-primary">
-                              Bài {index + 1}:
-                            </span>{" "}
+                            <span className="text-primary">Bài {index + 1}:</span>{" "}
                             {lesson.title}
                           </h4>
                           <p className="text-sm text-muted-foreground mt-1">
